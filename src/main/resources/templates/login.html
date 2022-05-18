@@ -1,61 +1,91 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta
-            http-equiv="Content-Type"
-            content="text/html, charset=UTF-8"
-            name="viewport"
-        />
-        <link rel="stylesheet" href="/styles/login.css" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-        />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap"
-            rel="stylesheet"
-        />
-        <title>Đăng nhập</title>
-    </head>
+  <head>
+    <meta
+      http-equiv="Content-Type"
+      content="text/html, charset=UTF-8"
+      name="viewport"
+    />
+    <link rel="stylesheet" href="/styles/login.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/scripts/login.js" defer></script>
+    <title>Đăng nhập</title>
+  </head>
 
-    <body
-        style="
-            background-image: url('https://res.cloudinary.com/baodang359/image/upload/v1652623064/java-project/background_z3rmo6.jpg');
-            background-repeat: no-repeat;
-            background-size: 100%;
-        "
-    >
-        <div class="login">
-            <h3 style="margin-bottom: 30px; color: white">
-                Chào mừng đến với WINX
-            </h3>
-            <form action="/auth/auth" method="post">
-                <h3>Đăng Nhập</h3>
-                <div style="width: 80%; margin-left: 10%">
-                    <label for="email">Tài khoản email</label>
-                    <input
-                        type="text"
-                        placeholder="Nhập tài khoản"
-                        id="email"
-                        name="email"
-                        required
-                    />
+  <body
+    style="
+      background-image: url('https://res.cloudinary.com/baodang359/image/upload/v1652623064/java-project/background_z3rmo6.jpg');
+      background-repeat: no-repeat;
+      background-size: 100%;
+    "
+  >
+    <div class="container">
+      <h1 style="color: white; text-align: center; margin-top: 100px">
+        Chào mừng đến với WINX
+      </h1>
+      <form action="/auth/auth" method="post">
+        <h2 style="text-align: center">Đăng Nhập</h2>
+        <div style="width: 80%; margin-left: 10%">
+          <label for="email">Email</label>
+          <input
+            class="cus-input"
+            type="text"
+            placeholder="Nhập email"
+            id="email"
+            name="email"
+            required
+          />
 
-                    <label for="password">Mật khẩu</label>
-                    <input
-                        type="password"
-                        placeholder="Nhập mật khẩu"
-                        id="password"
-                        name="password"
-                        required
-                    />
-                </div>
-
-                <div style="text-align: center">
-                    <button>Đăng nhập</button>
-                </div>
-            </form>
+          <label for="password">Mật khẩu</label>
+          <input
+            type="password"
+            placeholder="Nhập mật khẩu"
+            id="password"
+            name="password"
+            required
+          />
         </div>
-    </body>
+
+        <div style="text-align: center">
+          <button>Đăng nhập</button>
+          <button type="button" class="btn btn-primary" id="liveToastBtn">
+            Show live toast
+          </button>
+        </div>
+      </form>
+      <!-- Toast -->
+      <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div
+          id="liveToast"
+          class="toast"
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+        >
+          <div class="toast-header">
+            <img src="..." class="rounded me-2" alt="..." />
+            <strong class="me-auto">Bootstrap</strong>
+            <small>11 mins ago</small>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="toast"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="toast-body">Hello, world! This is a toast message.</div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
