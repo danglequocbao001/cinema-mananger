@@ -21,7 +21,7 @@ html {
   box-sizing: border-box;
 }
 body {
-  background-color: #080710;
+  background-color: #080710 !important;
 }
 .background {
   width: 430px;
@@ -32,7 +32,7 @@ body {
   top: 50%;
 }
 
-form {
+.cus-form {
   height: 500px;
   width: 600px;
   position: absolute;
@@ -66,26 +66,30 @@ label {
   padding: 0 10px;
   margin-top: 8px !important;
   font-size: 18px !important;
-  font-weight: 300;
+  border: none;
 }
+
+.cus-input:focus {
+  outline: none;
+}
+
 ::placeholder {
   color: #e5e5e5;
 }
-button {
-  margin-top: 50px;
+.cus-button {
+  margin-top: 50px !important;
   width: 50%;
   background-color: #fbca10;
   color: #fff;
   padding: 18px;
-  border-radius: 10px;
-  cursor: pointer;
+  border-radius: 10px !important;
   font-style: normal;
   font-weight: 500;
-  font-size: 32px;
-  line-height: 38px;
+  font-size: 32px !important;
+  line-height: 38px !important;
 }
 
-button:hover {
-  background-color: #fbd43f;
-  transition: all 0.5s;
+.cus-button:hover {
+  background-color: #fbd43f !important;
+  transition: all 0.5s !important;
 }

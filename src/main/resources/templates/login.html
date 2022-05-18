@@ -33,7 +33,7 @@
       <h1 style="color: white; text-align: center; margin-top: 100px">
         Chào mừng đến với WINX
       </h1>
-      <form action="/auth/auth" method="post">
+      <form class="cus-form" action="/auth/auth" method="post">
         <h2 style="text-align: center">Đăng Nhập</h2>
         <div style="width: 80%; margin-left: 10%">
           <label for="email">Email</label>
@@ -48,6 +48,7 @@
 
           <label for="password">Mật khẩu</label>
           <input
+            class="cus-input"
             type="password"
             placeholder="Nhập mật khẩu"
             id="password"
@@ -57,7 +58,7 @@
         </div>
 
         <div style="text-align: center">
-          <button>Đăng nhập</button>
+          <button class="cus-button">Đăng nhập</button>
           <button type="button" class="btn btn-primary" id="liveToastBtn">
             Show live toast
           </button>
@@ -75,7 +76,7 @@
           <div class="toast-header">
             <img src="..." class="rounded me-2" alt="..." />
             <strong class="me-auto">Bootstrap</strong>
-            <small>11 mins ago</small>
+            <small class="text-muted">just now</small>
             <button
               type="button"
               class="btn-close"
@@ -83,7 +84,30 @@
               aria-label="Close"
             ></button>
           </div>
-          <div class="toast-body">Hello, world! This is a toast message.</div>
+          <div class="toast-body">See? Just like this.</div>
+        </div>
+
+        <div
+          id="liveToast"
+          class="toast"
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+        >
+          <div class="toast-header">
+            <img src="..." class="rounded me-2" alt="..." />
+            <strong class="me-auto">Bootstrap</strong>
+            <small class="text-muted">2 seconds ago</small>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="toast"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="toast-body">
+            Heads up, toasts will stack automatically
+          </div>
         </div>
       </div>
     </div>
