@@ -51,6 +51,7 @@ public class FilmController {
 		} catch (SQLException e) {
 			new Log(e).Show();
 		}
+		System.out.println(countedFilm);
 
 		List<Film> films = new ArrayList<>();
 		try {
