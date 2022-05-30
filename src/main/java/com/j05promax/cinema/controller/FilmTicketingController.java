@@ -53,6 +53,7 @@ public class FilmTicketingController {
         }
 
         ctx.SetUnicodeCookie("film-name", film.Name, "/");
+        ctx.SetUnicodeCookie("film-id", film.FilmID, "/");
         ctx.SetUnicodeCookie("film-image", film.Thumnail, "/");
         ctx.SetUnicodeCookie("film-price", String.valueOf(film.Price), "/");
         ctx.SetUnicodeCookie("film-duration", String.valueOf(film.Duration), "/");
