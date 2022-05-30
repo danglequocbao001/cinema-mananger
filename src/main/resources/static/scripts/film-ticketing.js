@@ -5,6 +5,7 @@ const dates = (startDate, num) =>
       .slice(0, 10)
   );
 
+//Lấy thông tin từ cookies mà database trả đến
 cals = getCookie("calendar-dates")
   .split("-")
   .map((i) => new Date(parseInt(i)));
@@ -17,6 +18,7 @@ for (let i = 0; i < cals.length; i++) {
   days[key] = days[key].concat(cals[i]);
 }
 
+//Xuất ra các select theo ngày
 function initDay() {
   for (let day of Object.keys(days)) {
     let selectDay = document.getElementById("select-day-father");
@@ -27,6 +29,7 @@ function initDay() {
   }
 }
 
+//Xuất ra các select từng khung giờ chiếu trong ngày
 function initTime(day, days) {
   let selectTime = document.getElementById("select-time-father");
   selectTime.innerHTML = "";
