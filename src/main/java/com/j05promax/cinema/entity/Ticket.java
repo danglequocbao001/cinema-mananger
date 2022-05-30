@@ -11,14 +11,12 @@ public class Ticket extends Entity {
     public float Price = 0;
     public String Seat = null;
     public String UserID = null;
+    public String FilmID = null;
     public String Transaction = null;
     public Timestamp CreatedAt = new Timestamp(new Date().getTime());
     public Timestamp Updated = new Timestamp(new Date().getTime());
 
-
-
     public static String TableName() {
- 
         return "tickets";
     };
 
@@ -27,6 +25,7 @@ public class Ticket extends Entity {
         Price = result.getFloat("price");
         Seat = result.getString("seat");
         UserID = result.getString("user_id");
+        FilmID = result.getString("film_id");
         CreatedAt = result.getTimestamp("created_at");
         Updated = result.getTimestamp("updated_at");
         Transaction = result.getString("transaction");

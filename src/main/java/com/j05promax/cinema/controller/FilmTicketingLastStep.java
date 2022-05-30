@@ -49,6 +49,7 @@ public class FilmTicketingLastStep {
             ticket.UserID = ctx.getCookie("current-user").getValue();
             ticket.Seat = seats[index];
             ticket.Transaction = ctx.getCookie("transaction-id").getValue();
+            ticket.FilmID = ctx.getCookie("film-id").getValue();
             repo.Ticket.Create(ticket);
         }
         

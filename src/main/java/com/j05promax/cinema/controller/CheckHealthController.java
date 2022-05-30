@@ -27,9 +27,6 @@ public class CheckHealthController {
 		PostgreSQLRepo repo = PostgreSQLRepo.getInstance();
 		ctx = Midleware.Authenticate(ctx);
 		model.addAttribute("signedin", ctx.SignedIn);
-		// String datetime = "22-05-2022 11:30";
-		// DateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm");
-		// Date date = new Date();
 
 		try {
 			System.out.println(repo.Calendar.GetAll("1E453380F788A2E5627B161F7AA977B6").size());

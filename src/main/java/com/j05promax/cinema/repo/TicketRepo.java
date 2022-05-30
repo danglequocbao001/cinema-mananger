@@ -52,7 +52,7 @@ public class TicketRepo extends Repository {
     public boolean Create(Ticket ticket) {
         Common cm = Common.getInstance();
         ticket.TicketID = cm.GetUID();
-        String query = "INSERT INTO %s (ticket_id, price, seat, user_id, created_at, updated_at, transaction) VALUES(?, ?, ?, ?, ?, ?, ?) RETURNING ticket_id;";
+        String query = "INSERT INTO %s (ticket_id, price, seat, user_id, created_at, updated_at, transaction, film_id) VALUES(?, ?, ?, ?, ?, ?, ?, ?) RETURNING ticket_id;";
         try {
             ResultSet result = this.Query(
                     String.format(query, Ticket.TableName()), (ParamSetter) (statement) -> {
@@ -63,6 +63,7 @@ public class TicketRepo extends Repository {
                         statement.setTimestamp(5, ticket.CreatedAt);
                         statement.setTimestamp(6, ticket.Updated);
                         statement.setString(7, ticket.Transaction);
+                        statement.setString(8, ticket.FilmID);
                     });
 
             if (result.next()) {
